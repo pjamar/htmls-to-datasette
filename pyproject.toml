@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "htmls-to-datasette"
-version = "0.1.0"
+version = "0.1.1"
 description = "Tool to index and serve HTML files. Powered by Datasette."
+description-file = "README.md"
 authors = ["Pablo Lopez-Jamar <pablo.lopez.jamar@gmail.com>"]
 license = "Apache License 2.0"
 homepage = "https://github.com/pjamar/htmls-to-datasette"
@@ -11,7 +12,7 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 sqlite-utils = "^3.17"
 click = "^8.0.1"
 rich = "^10.10.0"
