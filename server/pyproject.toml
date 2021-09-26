@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "htmlstore-server"
+version = "0.1.0"
+description = "A Datasette served example of an HTML files database."
+authors = ["Pablo Lopez-Jamar <pablo.lopez.jamar@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+datasette = "^0.58.1"
+datasette-media = "^0.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

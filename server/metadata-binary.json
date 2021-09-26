@@ -1,0 +1,20 @@
+{
+    "databases": {
+        "htmlstore": {
+            "queries": {
+                "search": {
+                    "sql": "select added, link_html_file(id, name) as name, size from files where rowid in (select rowid from files_fts where files_fts match escape_fts(:q)) order by added desc limit 101",
+                    "title": "Search in HTML files",
+                    "hide_sql": true
+                }
+            }
+        }
+    },
+    "plugins": {
+        "datasette-media": {
+            "html": {
+                "sql": "select content, 'text/html;charset=utf-8' as content_type from files where id=:key"
+            }
+        }
+    }
+}
