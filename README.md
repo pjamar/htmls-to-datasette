@@ -1,7 +1,7 @@
 # htmls-to-datasette
 
-Htmls-to-datasette is a tool to index HTML files into a [Sqlite](https://sqlite.org) database so they can be searched at
-a later time.
+Htmls-to-datasette is a tool to index HTML files into a [Sqlite](https://sqlite.org) database so they can be searched and
+visualized at a later time. This can be useful for web archival/web clipping purposes.
 
 The database created is designed to be served on [Datasette](https://datasette.io/) and to allow to read the indexed
 files through it. 
@@ -10,7 +10,7 @@ This tool was created to serve my own work flow that is:
  1. Have a browser with [SingleFile](https://github.com/gildas-lormeau/SingleFile) extension installed.
  2. When there is an interesting blog post or article save a full web page into one HTML using SingleFile.
  3. The created `.html` file on the downloads folder is moved to a common repository (via cron job).
- 4. This common repository is synched to my main server (I use [Syncthing](https://syncthing.net/)) for this.
+ 4. This common repository is synched to my main server (I use [Syncthing](https://syncthing.net/) for this).
  5. On my personal server all the new HTML files are moved to the serving folder and this indexer is called to populate
     the search database.
  6. Datasette with an specific configuration will allow searching on these files and reading them online.
