@@ -16,7 +16,7 @@ This tool was created to serve my own work flow that is:
  6. Datasette with an specific configuration will allow searching on these files and reading them online.
 
 The indexing tool can insert the HTML contents on the database itself, to be served from there, or not. In this second
-case the files will be server from the location they were indexed from. 
+case the files will be served from the location they were indexed from. 
 
 ## Setup
 
