@@ -2,7 +2,7 @@
 name = "htmls-to-datasette"
 version = "0.1.1"
 description = "Tool to index and serve HTML files. Powered by Datasette."
-description-file = "README.md"
+readme = "README.md"
 authors = ["Pablo Lopez-Jamar <pablo.lopez.jamar@gmail.com>"]
 license = "Apache License 2.0"
 homepage = "https://github.com/pjamar/htmls-to-datasette"
@@ -17,7 +17,6 @@ sqlite-utils = "^3.17"
 click = "^8.0.1"
 rich = "^10.10.0"
 html2text = "^2020.1.16"
-datasette-render-html = "^0.1.2"
 
 [tool.poetry.scripts]
 htmls-to-datasette = 'htmls_to_datasette.cli:cli'

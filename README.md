@@ -20,6 +20,20 @@ case the files will be served from the location they were indexed from.
 
 ## Setup
 
+### Standard install
+
+```bash
+pip install htmls-to-datasette
+```
+
+And you can start running the command, use `--help` to see specific commands help.
+```bash
+htmls-to-datasette --help
+htmls-to-datasette index --help
+```
+
+### Development install
+
 This project uses *[Poetry](https://python-poetry.org/)* to make it easier to setup the appropriate dependencies to run.
 
 Installation steps for *Poetry* can be checked on their [website](https://python-poetry.org/docs/#installation) but for
@@ -29,26 +43,33 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 ```
 *Note that you should exercise caution when running something directly from Internet.*  
 
-### Install dependencies:
+#### Install dependencies:
 ```bash
 poetry install
 ```
 
-### Build
+#### Run
+
+You can use `poetry run` in front of htmls-to-datassette so it is using the virtual environment that you just created
+before.
 
 ```bash
-poetry build
+poetry run htmls-to-datassette [options]
 ```
 
-### Install
+#### Build an installable package
+
+```bash
+poetry build # The resoult will be in dist directory
+```
 
 I use [pipx](https://pypa.github.io/pipx) for installing packages on isolated environments. You can install this package
 from the `dist/` directory in whichever way you prefer or you can 
 [install pipx](https://pypa.github.io/pipx/installation/).  
 
-The installation with pipx would be:
+The installation with pipx would be similar to:
 ```bash
-pipx install dist/htmls-to-datasette-0.1.0.tar.gz
+pipx install dist/htmls-to-datasette-0.1.1.tar.gz
 ```
 
 ## Usage
