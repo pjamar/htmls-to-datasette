@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "htmls-to-datasette"
-version = "0.1.1"
+version = "0.1.2"
 description = "Tool to index and serve HTML files. Powered by Datasette."
 readme = "README.md"
 authors = ["Pablo Lopez-Jamar <pablo.lopez.jamar@gmail.com>"]
