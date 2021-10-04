@@ -37,6 +37,7 @@ def index_dir(
     directory: pathlib.Path,
     db: sqlite_utils.Database,
     store_binary: bool,
+    recursive: bool,
     stats: IndexStats,
 ):
     files_to_process = [
@@ -76,6 +77,11 @@ def index_dir(
                 db[FILES_TABLE].insert(values, pk="id")
         else:
             stats.already_indexed = stats.already_indexed + 1
+
+    if recursive:
+        subdirs_to_process = [file for file in directory.iterdir() if file.is_dir()]
+        for subdir in subdirs_to_process:
+            index_dir(subdir, db, store_binary, recursive, stats)
 
 
 def html_file_to_text(file):
@@ -120,8 +126,15 @@ def initialize_db(db: sqlite_utils.Database):
     default=False,
     help="Insert the file's contents into SQLite DB as binary.",
 )
+@click.option(
+    "--recursive",
+    "-r",
+    is_flag=True,
+    default=False,
+    help="Index also files in all subdirectories.",
+)
 @click.command()
-def index(input_dirs: str, database: str, store_binary: bool):
+def index(input_dirs: str, database: str, store_binary: bool, recursive: bool):
     """Indexes the HTMLs files so they can be searched."""
 
     print(f"Using database [bold]{database}[/bold].")
@@ -130,7 +143,7 @@ def index(input_dirs: str, database: str, store_binary: bool):
 
     stats = IndexStats()
     for input_dir in input_dirs:
-        index_dir(pathlib.Path(input_dir), db, store_binary, stats)
+        index_dir(pathlib.Path(input_dir), db, store_binary, recursive, stats)
 
     if stats.already_indexed:
         print(f"{stats.already_indexed} file(s) were already indexed!")
