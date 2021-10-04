@@ -69,7 +69,7 @@ from the `dist/` directory in whichever way you prefer or you can
 
 The installation with pipx would be similar to:
 ```bash
-pipx install dist/htmls-to-datasette-0.1.1.tar.gz
+pipx install dist/htmls-to-datasette-0.1.2.tar.gz
 ```
 
 ## Usage
