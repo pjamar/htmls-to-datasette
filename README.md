@@ -93,7 +93,7 @@ Now index the example file using `htmls-to-datasette`:
 htmls-to-datasette index input
 ```
 
-All files contained in `input` (`.html` and `.html`) will be indexed and a full text search index created. Whenever
+All files contained in `input` (`.html` and `.htm`) will be indexed and a full text search index created. Whenever
 there are new files to be indexed this command can be run in the same way.
 
 And now run the Datasette server:
